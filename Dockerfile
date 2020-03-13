@@ -30,6 +30,10 @@ EXPOSE 8080
 # VOLUME /app
 WORKDIR /app
 
+COPY cache .
+
+RUN chmod 777 -R cache
+
 RUN chmod 777 -R /app/
 
 ENTRYPOINT ["/scripts/run.sh"]
